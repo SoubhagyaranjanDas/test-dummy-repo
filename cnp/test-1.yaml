@@ -1,0 +1,17 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: test-1
+  namespace: default
+spec:
+  endpointSelector:
+    matchLabels:
+      app: curl-2
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: curl
+      toPorts:
+        - ports:
+            - port: "8000"
+              protocol: TCP
