@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cilium-cnp-repo
+  description: GitOps repository for managing Cilium Network Policies
+  annotations:
+    github.com/project-slug: SoubhagyaranjanDas/test-dummy-repo
+    backstage.io/source-location: url:https://github.com/SoubhagyaranjanDas/test-dummy-repo/tree/main/cnp
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: user:default/soubhagyaranjan-das
+  lifecycle: experimental
