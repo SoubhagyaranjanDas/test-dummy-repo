@@ -1,0 +1,17 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: sd-test-1
+  namespace: default
+spec:
+  endpointSelector:
+    matchLabels:
+      app: curl
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            app: httpbin
+      toPorts:
+        - ports:
+            - port: "8080"
+              protocol: TCP
